@@ -252,7 +252,52 @@ body::after {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 
+  .hamburger {
+    display: block;
+  }
+
+  #nav-links {
+    display: none;
+  }
+
+  #nav-links.active {
+    display: block;
+    background: #891c1c;
+    padding: 10px;
+  }
+
+  #nav-links li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .hero {
+    margin-left: 0;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .sosial {
+    flex-direction: row;
+    bottom: 20px;
+    left: 10px;
+    right: 10px;
+    justify-content: center;
+  }
+}
+
+/* ========== MOBILE VIEW ENHANCEMENTS ========== */
+@media (max-width: 768px) {
   body {
     font-size: 16px;
     overflow-x: hidden;
@@ -262,9 +307,9 @@ body::after {
     width: 100%;
     height: auto;
     position: fixed;
+    top: 0;
     z-index: 1000;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
   }
@@ -292,7 +337,12 @@ body::after {
 
   #nav-links li {
     margin: 0;
-    text-align: center
+    text-align: center;
+  }
+
+  .main-content {
+    margin: 0;
+    padding: 20px 10px;
   }
 
   .hero {
@@ -303,9 +353,9 @@ body::after {
   }
 
   .hero-content h1 {
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 5vw, 2.5rem);
   }
-  
+
   .hero-sub {
     font-size: 1rem;
     margin-bottom: 20px;
@@ -358,11 +408,12 @@ body::after {
     font-size: 1rem;
     width: 100%;
   }
+
   .sosial {
     flex-direction: row;
     bottom: 15px;
-    left: 0px;
-    right: 0px;
+    left: 0;
+    right: 0;
     justify-content: center;
     gap: 10px;
   }
@@ -371,4 +422,30 @@ body::after {
     width: 30px;
     height: 30px;
   }
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  font-size: 24px;
+  padding: 10px 14px;
+  border-radius: 50%;
+  z-index: 1001;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Scroll Animation */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
