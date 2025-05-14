@@ -455,28 +455,36 @@ section {
   .sidebar {
     width: 100%;
     height: auto;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(199, 114, 114, 0.95);
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
+    padding: 10px 20px;
   }
 
   .hamburger {
-    display: block;
+    display: block !important;
     font-size: 26px;
-    color: white;
+    background-color: #fff;
+    color: #c77272;
+    padding: 8px 14px;
+    border-radius: 8px;
     cursor: pointer;
-    z-index: 1100;
+    z-index: 2000;
   }
 
   #nav-links {
-    display: none;
-     flex-direction: column;
+   display: none;
+    flex-direction: column;
     width: 100%;
-    background-color: var(--primary);
-    padding: 10px 0;
-    margin-top: 10px;
+    background: var(--primary);
+    position: absolute;
+    top: 60px;
+    left: 0;
   }
 
   #nav-links.active {
@@ -488,6 +496,7 @@ section {
   #nav-links li {
     width: 100%;
     text-align: left;
+    padding: 12px 20px;
     display: inline-block;
     margin-right: 0;
   }
@@ -496,6 +505,11 @@ section {
     padding: 12px 20px;
     width: 100%;
     display: block;
+    color: white;
+  }
+
+  .logo {
+    font-size: 1.3rem;
     color: white;
   }
 
@@ -534,43 +548,6 @@ section {
   body {
     font-size: 16px;
     overflow-x: hidden;
-  }
-
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px 20px;
-  }
-
-  .logo {
-    font-size: 1.2rem;
-    margin-bottom: 0;
-  }
-
-  .hamburger {
-    display: block;
-    font-size: 24px;
-  }
-
-  #nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background: var(--primary);
-  }
-
-  #nav-links.active {
-    display: flex;
-  }
-
-  #nav-links li {
-    margin: 0;
-    text-align: center;
   }
 
   .main-content {
@@ -666,9 +643,7 @@ section {
     width: 30px;
     height: 30px;
   }
-}
 
-/* Floating WhatsApp Button */
 .whatsapp-float {
   position: fixed;
   bottom: 80px;
@@ -692,4 +667,5 @@ section {
 .fade-in-up.visible {
   opacity: 1;
   transform: translateY(0);
+}
 }
