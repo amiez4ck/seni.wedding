@@ -99,22 +99,35 @@ body::after {
   font-weight: bold;
 }
 
-/* Submenu */
+#nav-links li.has-submenu > a,
+#nav-links li.has-sub-submenu > a {
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+#nav-links li.has-sub-submenu > a {
+  font-weight: normal;
+  padding-left: 30px;
+}
+
 .submenu {
   display: none;
-  margin-top: 5px;
-  margin-left: 10px;
+  margin-top: 0;
+  padding-left: 15px;
   background: var(--highlight);
-  border-radius: 5px;
+  border-radius: 10px;
   overflow: hidden;
-  padding: 0 0 5px 0;
-  animation: slideDown 0.4s ease;
+  padding: 5px 0;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 200;
 }
 
 .submenu a {
   padding: 8px 20px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #fff;
+  display: block;
   transition: background 0.3s;
 }
 
@@ -122,16 +135,15 @@ body::after {
   background: var(--primary);
 }
 
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to   { opacity: 1; transform: translateY(0); }
+.has-submenu {
+  position: relative;
 }
 
 .has-sub-submenu > .submenu {
   background: #ff9762;
-  border-left: 1px solid #fff;
-  padding-left: 15px;
-  margin-left: 10px;
+  border-left: 2px solid #fff;
+  padding-left: 20px;
+  margin-left: 0;
   margin-top: 5px;
 }
 
@@ -173,6 +185,8 @@ section {
 }
 
 .product-card img {
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
   width: 100%;
   height: auto;
   display: block;
@@ -186,7 +200,12 @@ section {
 .fade-in-up {
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInUp 0.8s ease-out forwards;
+  transition: all 0.8s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @keyframes fadeInUp {
@@ -214,6 +233,7 @@ section {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(2px);
   z-index: 1;
 }
 
@@ -271,14 +291,14 @@ section {
 }
 
 .cta-btn {
-  background: var(--primary);
+  background: linear-gradient(to right, #d48c94, #e9c3c8);
   padding: 12px 28px;
   color: var(--white);
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
 .cta-btn:hover {
@@ -458,6 +478,7 @@ section {
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
     z-index: 1000;
     background: rgba(199, 114, 114, 0.95);
     display: flex;
@@ -468,13 +489,16 @@ section {
 
   .hamburger {
     display: block !important;
-    font-size: 26px;
-    background-color: #fff;
-    color: #c77272;
+    font-size: 28px;
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
     padding: 8px 14px;
+    margin-right: 10px;
     border-radius: 8px;
+    position: relative;
     cursor: pointer;
-    z-index: 2000;
+    z-index: 1101;
   }
 
   #nav-links {
@@ -508,9 +532,20 @@ section {
     color: white;
   }
 
+    .submenu {
+    margin-left: 0;
+    background: #d48c94;
+  }
+
+  .has-sub-submenu > .submenu {
+    background: #eaa57a;
+  }
+
   .logo {
-    font-size: 1.3rem;
+    flex-grow: 1;
+    font-size: 1.2rem;
     color: white;
+    font-weight: bold;
   }
 
   .hero {
