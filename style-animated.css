@@ -441,6 +441,25 @@ section {
 
 /* ========== MOBILE VIEW ENHANCEMENTS ========== */
 @media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
   body {
     font-size: 16px;
     overflow-x: hidden;
@@ -574,7 +593,6 @@ section {
   }
 }
 
-/* Floating WhatsApp Button */
 .whatsapp-float {
   position: fixed;
   bottom: 80px;
