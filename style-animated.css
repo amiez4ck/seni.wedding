@@ -526,6 +526,8 @@ section {
   
 
   .cta-btn {
+    position: relative;
+    z-index: 11;
     padding: 10px 20px;
     font-size: 1rem;
     display: inline-block;
@@ -568,7 +570,9 @@ section {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 0 10px;
+    padding: 0 10px 80px; /* Tambah padding bawah */
+    position: relative;
+    z-index: 1;
   }
 
   .contact-form input,
@@ -579,12 +583,14 @@ section {
   }
 
   .sosial {
+    position: fixed;
     flex-direction: row;
     bottom: 15px;
     left: 0;
     right: 0;
     justify-content: center;
     gap: 10px;
+    z-index: 10;
   }
 
   .sosial a img {
@@ -593,6 +599,7 @@ section {
   }
 }
 
+/* Floating WhatsApp Button */
 .whatsapp-float {
   position: fixed;
   bottom: 80px;
