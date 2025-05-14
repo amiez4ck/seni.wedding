@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap');
 
 :root {
@@ -21,7 +25,6 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url('img/grain-semi_bg.jpg'); 
   opacity: 0.05;
   pointer-events: none;
   z-index: 9999;
@@ -101,8 +104,7 @@ body::after {
 
 #nav-links li.has-submenu > a,
 #nav-links li.has-sub-submenu > a {
-  font-weight: bold;
-  padding-left: 20px;
+  padding-left: 16px;
 }
 
 #nav-links li.has-sub-submenu > a {
@@ -185,7 +187,7 @@ section {
 
 .hero {
   height: 100vh;
-  background: url('img/bg_1.png') center/cover no-repeat;
+  background: url('img/bg-blur.png') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -277,6 +279,58 @@ section {
   padding: 30px;
 }
 
+.why-us {
+  padding: 80px 20px;
+  background: var(--bg-light);
+  text-align: center;
+}
+
+.why-us h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: var(--primary);
+}
+
+.why-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.why-grid .item {
+  flex: 1 1 220px;
+  max-width: 260px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-grid .item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.why-grid .item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+
+.why-grid .item p {
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+
 /* Thumbnail Style */
 .tiktok-thumbnail {
   position: relative;
@@ -340,9 +394,14 @@ section {
   justify-content: center;
   margin-top: 20px;
   overflow: hidden;
-  max-height: 500px; /* atau kurang jika mahu lebih padat */
+  max-height: 500px; 
   padding-bottom: 20px;
 }
+
+.promo-video h2 {
+  text-align: center;
+}
+
 
 .tiktok-embed {
   max-width: 280px;
@@ -459,8 +518,8 @@ section {
     background-color: transparent;
     color: #ffffff;
     border: none;
-    padding: 8px 14px;
-    margin-right: 10px;
+    padding: 8px 28px;
+    margin-right: 20px;
     border-radius: 8px;
     position: relative;
     cursor: pointer;
@@ -473,20 +532,20 @@ section {
     width: 100%;
     background: var(--primary);
     position: absolute;
-    top: 60px;
+    top: 70px;
     left: 0;
   }
 
   #nav-links.active {
     display: flex !important;
-    background: #891c1c;
-    padding: 10px;
+    background: #ff9999;
+    padding: 0px;
   }
 
   #nav-links li {
     width: 100%;
     text-align: left;
-    padding: 12px 20px;
+    padding: 4px 10px;
     display: inline-block;
     margin-right: 0;
   }
@@ -495,7 +554,7 @@ section {
     padding: 12px 20px;
     width: 100%;
     display: block;
-    color: white;
+    color: rgb(255, 255, 255);
   }
 
     .submenu {
@@ -581,16 +640,36 @@ section {
   }
 
   .why-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.why-grid .item {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+}
 
   .why-grid .item img {
-    width: 60px;
-    margin-bottom: 10px;
-  }
+  width: 100%;
+  max-width: 160px;
+  margin: 3px auto 10px;
+  border-radius: 12px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.why-grid .item p {
+  font-size: 1.05rem;
+  color: #a06262;
+  font-weight: 500;
+}
 
   .why-grid .item:hover {
   transform: translateY(-5px);
