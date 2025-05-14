@@ -163,40 +163,6 @@ section {
   color: var(--text-main);
 }
 
-.product-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
-
-.product-card {
-  width: 280px;
-  background: var(--white);
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-}
-
-.product-card img {
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.product-card h3 {
-  margin: 15px 0;
-  font-size: 1.1rem;
-  color: var(--text-main);
-}
 .fade-in-up {
   opacity: 0;
   transform: translateY(20px);
