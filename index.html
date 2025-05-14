@@ -1,671 +1,133 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap');
 
-:root {
-  --bg-light: #fff8f5;
-  --bg-accent: #ffeef0;
-  --text-main: #5a3e36;
-  --text-muted: #a67c7c;
-  --highlight: #e4a2a2;
-  --primary: #c77272;
-  --white: #ffffff;
-}
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seni Conteng HT</title>
+  <link rel="stylesheet" href="style-animated.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: var(--bg-light);
-  color: var(--text-main);
-}
+  <nav class="sidebar">
+    <div class="logo">Seni Wedding HT</div>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul id="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li class="has-submenu">
+        <a href="#product" class="submenu-toggle">Produk</a>
+        <ul class="submenu">
+          <li class="has-sub-submenu">
+            <a href="#weddingboard" class="submenu-toggle">Wedding Board</a>
+            <ul class="submenu">
+              <li><a href="#wbwood">Wedding Board Wood</a></li>
+              <li><a href="#wbmirror">Wedding Board Mirror</a></li>
+              <li><a href="#wbacrylic">Wedding Board Acrylic</a></li>
+            </ul>
+          </li>
+          <li class="has-sub-submenu">
+            <a href="#maskahwin" class="submenu-toggle">Mas Kahwin</a>
+            <ul class="submenu">
+              <li><a href="#mkacrylic">Mas Kahwin Acrylic</a></li>
+              <li><a href="#mkwood">Mas Kahwin Wood</a></li>
+            </ul>
+          </li>
+          <li><a href="#guestbook">Guestbook Puzzle</a></li>
+        </ul>
+      </li>
+      <li><a href="#testimoni">Testimoni</a></li>
+      <li><a href="#katalog">Catalog</a></li>
+      <li><a href="#aboutus">Tentang Kami</a></li>
+    </ul>
+  </nav>
 
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url('img/grain-semi_bg.jpg'); 
-  opacity: 0.05;
-  pointer-events: none;
-  z-index: 9999;
-}
+  <main class="main-content">
+    <section class="hero" id="home">
+      <div class="overlay"></div>
+      <a href="#product" class="scroll-down">▼</a>
+      <div class="hero-content fade-in">
+        <h1>Cipta Momen Indah<br>Dengan Sentuhan Eksklusif Kami</h1>
+        <p class="hero-sub">“Sebuah kenangan indah bermula dengan sentuhan yang bermakna.”</p>
+        <a href="#product" class="cta-btn">Lewati Produk Kami</a>
+      </div>
+    </section>
 
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 230px;
-  height: 100%;
-  background: rgba(199, 114, 114, 0.75);
-  backdrop-filter: blur(10px);
-  border-right: 1px solid var(--highlight);
-  color: #fff;
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.15);
-  z-index: 100;
-}
+    <section id="why" class="why-us fade-in">
+      <h2>Mengapa Pilih Seni Wedding HT?</h2>
+      <div class="why-grid">
+        <div class="item">
+          <img src="img/icon-custom.svg" alt="Eksklusif">
+          <p>Rekaan Eksklusif & Custom</p>
+        </div>
+        <div class="item">
+          <img src="img/icon-love.svg" alt="">
+          <p>Sentuhan Romantik & Lembut</p>
+        </div>
+        <div class="item">
+          <img src="img/icon-speed.svg" alt="">
+          <p>Siap Cepat & Teliti</p>
+        </div>
+      </div>
+    </section>
 
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  font-weight: bold;
-  margin-bottom: 30px;
-  animation: fadeInUp 1s ease-out forwards;
-  opacity: 0;
-}
+<section id="product" class="product-preview fade-in-up">
+  <h2>Koleksi Pilihan Kami</h2>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="img/wedding-board.jpg" alt="Wedding Board" />
+      <h3>Wedding Board Kayu</h3>
+    </div>
+    <div class="product-card">
+      <img src="img/mas-kahwin.jpg" alt="Mas Kahwin" />
+      <h3>Mas Kahwin Eksklusif</h3>
+    </div>
+    <div class="product-card">
+      <img src="img/puzzlebox.jpg" alt="Guestbook Puzzle" />
+      <h3>Guestbook Puzzle</h3>
+    </div>
+  </div>
+</section>
 
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeIn 1s forwards ease-out;
-}
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+    <section id="video" class="promo-video fade-in">
+  <h2>Lihat Proses Kami</h2>
+  <div class="video-wrapper">
+    <blockquote class="tiktok-embed"
+      cite="https://www.tiktok.com/@seni.wedding/video/7442130518562311432"
+      data-video-id="7442130518562311432"
+      style="max-width: 325px; min-width: 325px;">
+      <section>Loading...</section>
+    </blockquote>
+    <script async src="https://www.tiktok.com/embed.js"></script>
+  </div>
+</section>
+
+    <section id="contact" class="contact-form fade-in">
+      <h2>Tempah Sekarang</h2>
+      <form>
+        <input type="text" placeholder="Nama Anda" required>
+        <input type="tel" placeholder="No Telefon" required>
+        <textarea placeholder="Pesanan / Jenis Produk" rows="4" required></textarea>
+        <button class="cta-btn" onclick="window.open('https://wa.me/60123119744', '_blank')">Hantar ke WhatsApp</button>
+      </form>
+    </section>
+  </main>
+
+  <div class="sosial">
+    <a href="https://wa.me/60123119744" target="_blank"><img src="img/whatsapp.png" alt="Whatsapp" /></a>
+    <a href="https://www.tiktok.com/@seni.wedding" target="_blank"><img src="img/tiktok.png" alt="Tiktok" /></a>
+    <a href="https://www.instagram.com/seni.wedding/" target="_blank"><img src="img/instagram.png" alt="Instagram" /></a>
+  </div>
+
+  <script src="script.js"></script>
+
+  <script>
+  function toggleMenu() {
+    document.getElementById("nav-menu").classList.toggle("active");
   }
-}
+</script>
 
-.hamburger {
-  display: none;
-  font-size: 26px;
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-
-/* Navigation */
-#nav-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#nav-links li {
-  margin-bottom: 8px;
-}
-
-#nav-links a {
-  display: block;
-  padding: 10px 15px;
-  border-radius: 8px;
-  color: white;
-  text-decoration: none;
-  transition: background 0.3s, transform 0.3s;
-}
-
-#nav-links a:hover,
-#nav-links a.active {
-  background-color: #fff;
-  color: var(--primary);
-  transform: translateX(4px);
-  font-weight: bold;
-}
-
-/* Submenu */
-.submenu {
-  display: none;
-  margin-top: 5px;
-  margin-left: 10px;
-  background: var(--highlight);
-  border-radius: 5px;
-  overflow: hidden;
-  padding: 0 0 5px 0;
-  animation: slideDown 0.4s ease;
-}
-
-.submenu a {
-  padding: 8px 20px;
-  font-size: 0.9rem;
-  color: #fff;
-  transition: background 0.3s;
-}
-
-.submenu a:hover {
-  background: var(--primary);
-}
-
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.has-sub-submenu > .submenu {
-  background: #ff9762;
-  border-left: 1px solid #fff;
-  padding-left: 15px;
-  margin-left: 10px;
-  margin-top: 5px;
-}
-
-section {
-  background: linear-gradient(180deg, #fff8f5 0%, #ffeef0 100%);
-}
-
-.product-preview {
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.product-preview h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: var(--text-main);
-}
-
-.product-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
-
-.product-card {
-  width: 280px;
-  background: var(--white);
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-}
-
-.product-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.product-card h3 {
-  margin: 15px 0;
-  font-size: 1.1rem;
-  color: var(--text-main);
-}
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-
-.hero {
-  height: 100vh;
-  background: url('img/bg_1.png') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-  padding: 0 30px;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.3);
-  z-index: 1;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 600px;
-}
-
-.hero-content h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  color: white;
-  margin-bottom: 20px;
-  animation: fadeInUp 1s ease-out forwards;
-  opacity: 0;
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.scroll-down {
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 28px;
-  color: white;
-  opacity: 0.6;
-  animation: bounce 2s infinite;
-  text-decoration: none;
-  z-index: 2;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translate(-50%, 0);
-  }
-  50% {
-    transform: translate(-50%, 10px);
-  }
-}
-
-
-.hero-sub {
-  font-style: italic;
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.85);
-  margin-top: 10px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  animation: fadeInUp 1.5s ease-out forwards;
-  opacity: 0;
-}
-
-.cta-btn {
-  background: var(--primary);
-  padding: 12px 28px;
-  color: var(--white);
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-}
-
-.cta-btn:hover {
-  background: var(--white);
-  color: var(--primary);
-}
-
-.main-content {
-  margin-left: 250px;
-  padding: 30px;
-}
-
-/* Thumbnail Style */
-.tiktok-thumbnail {
-  position: relative;
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
-  cursor: pointer;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-}
-
-.tiktok-thumbnail img {
-  width: 100%;
-  display: block;
-}
-
-.play-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 40px;
-  color: white;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
-}
-
-/* Popup */
-.popup {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-  z-index: 9999;
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-content {
-  position: relative;
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  max-width: 360px;
-  width: 90%;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
-  color: #333;
-  cursor: pointer;
-}
-
-.promo-video .video-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  overflow: hidden;
-  max-height: 500px; /* atau kurang jika mahu lebih padat */
-  padding-bottom: 20px;
-}
-
-.tiktok-embed {
-  max-width: 280px;
-  height: 420px !important;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-}
-
-.contact-form {
-  padding: 60px 20px;
-  text-align: center;
-  background: #fff8f5;
-}
-
-.contact-form h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  color: var(--text-main);
-  margin-bottom: 30px;
-}
-
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  max-width: 600px;
-  margin: auto;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px 15px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  transition: border-color 0.3s;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: var(--primary);
-  outline: none;
-}
-
-.contact-form .cta-btn {
-  padding: 12px 24px;
-  font-size: 1rem;
-  border-radius: 30px;
-  background: linear-gradient(to right, #c77272, #e4a2a2);
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.contact-form .cta-btn:hover {
-  background: #fff;
-  color: var(--primary);
-  border: 1px solid var(--primary);
-}
-
-.sosial {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: white;
-  padding: 12px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 1000;
-}
-
-.sosial a img {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.sosial a img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    background: rgba(199, 114, 114, 0.95);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-  }
-
-  .hamburger {
-    display: block !important;
-    font-size: 26px;
-    background-color: #fff;
-    color: #c77272;
-    padding: 8px 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    z-index: 2000;
-  }
-
-  #nav-links {
-   display: none;
-    flex-direction: column;
-    width: 100%;
-    background: var(--primary);
-    position: absolute;
-    top: 60px;
-    left: 0;
-  }
-
-  #nav-links.active {
-    display: flex !important;
-    background: #891c1c;
-    padding: 10px;
-  }
-
-  #nav-links li {
-    width: 100%;
-    text-align: left;
-    padding: 12px 20px;
-    display: inline-block;
-    margin-right: 0;
-  }
-
-  #nav-links a {
-    padding: 12px 20px;
-    width: 100%;
-    display: block;
-    color: white;
-  }
-
-  .logo {
-    font-size: 1.3rem;
-    color: white;
-  }
-
-  .hero {
-    margin-left: 0;
-    padding: 30px;
-    text-align: center;
-  }
-
-  .sosial {
-    flex-direction: row;
-    bottom: 20px;
-    left: 10px;
-    right: 10px;
-    justify-content: center;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background: white;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    z-index: 1000;
-  }
-
-  nav ul.active {
-    display: flex;
-  }
-  body {
-    font-size: 16px;
-    overflow-x: hidden;
-  }
-
-  .main-content {
-    margin: 0;
-    padding: 20px 10px;
-  }
-
-  .hero {
-    margin-left: 0;
-    height: auto;
-    padding: 60px 15px;
-    background-size: cover;
-  }
-
-  .hero-content h1 {
-    font-size: clamp(1.4rem, 5vw, 2.5rem);
-  }
-
-  .hero-sub {
-    font-size: 1rem;
-    margin-bottom: 20px;
-  }
-
-  .cta-btn {
-    position: relative;
-    z-index: 11;
-    padding: 10px 20px;
-    font-size: 1rem;
-    display: inline-block;
-  }
-
-  .why-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
-
-  .why-grid .item img {
-    width: 60px;
-    margin-bottom: 10px;
-  }
-
-  .why-grid .item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-  .video-wrapper,
-  .testimoni-video-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 0 10px;
-    box-sizing: border-box;
-  }
-
-  .tiktok-embed {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: unset !important;
-    height: 400px !important;
-  }
-
-  .contact-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 0 10px 80px; /* Tambah padding bawah */
-    position: relative;
-    z-index: 1;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    padding: 10px;
-    font-size: 1rem;
-    width: 100%;
-  }
-
-  .sosial {
-    position: fixed;
-    flex-direction: row;
-    bottom: 15px;
-    left: 0;
-    right: 0;
-    justify-content: center;
-    gap: 10px;
-    z-index: 10;
-  }
-
-  .sosial a img {
-    width: 30px;
-    height: 30px;
-  }
-
-.whatsapp-float {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  background: #25d366;
-  color: white;
-  font-size: 24px;
-  padding: 10px 14px;
-  border-radius: 50%;
-  z-index: 1001;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-/* Scroll Animation */
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
-}
-
-.fade-in-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-}
+</body>
+</html>
